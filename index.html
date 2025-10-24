@@ -1,0 +1,209 @@
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Costo de Material MC + DXF Avanzado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js"></script>
+</body>
+</html>
+  <!-- Contenido de tu página -->
+  <h2>Hola Bienvenid@ a mi sitio</h2>
+    <header style="text-align: center; margin-bottom: 20px;">
+        <img src="https://metalcortes.com.co/wp-content/uploads/2019/07/Logo-Metalcortes_web_RETINA.png" alt="Logo Metalcortes" style="max-width: 250px; height: auto;">
+    </header>
+
+    <section class="cotizacion-header">
+        <h1 style="color: #333; font-size: 1.8em; margin-bottom: 0.5em;">
+            Cotización de Material Láser y Pliegue
+        </h1>
+        <p style="font-size: 1em; color: #555; max-width: 800px; margin: 0 auto 1.5em auto;">
+            Use la tabla para la cotización de material y el módulo de abajo para el costo de corte láser por DXF.
+        </p>
+    </section>
+
+    <div style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9; border-radius: 4px;">
+        <div class="consecutivo-input">
+            <div>
+                <label for="consecutivoCotizacion" style="font-weight: bold; color: red;"># Cotización:</label>
+                <input type="text" id="consecutivoCotizacion" name="consecutivoCotizacion" placeholder="Ej: 00123" style="width: 150px; padding: 5px; margin-left: 10px;">
+            </div>
+            <div>
+                <label for="responsableCotizacion" style="font-weight: bold;">🧑 Responsable de la Cotización:</label>
+                <select id="responsableCotizacion" style="width: 200px; padding: 5px; margin-left: 10px;">
+                    <option value="SIN ESPECIFICAR">Seleccione un nombre</option>
+                    <option value="Victor Orrego">Victor Orrego</option>
+                    <option value="Felipe Vallejo">Felipe Vallejo</option>
+                    <option value="Juan Jose">Juan Jose</option>
+                    <option value="Steven">Steven</option>
+                    <option value="Cristian">Cristian</option>
+                    <option value="Johan">Johan</option>
+                    <option value="Mauricio">Mauricio</option>
+                </select>
+            </div>
+            <div>
+                <label for="validezOferta" style="font-weight: bold;">Validez de la Oferta:</label>
+                <select id="validezOferta" style="width: 150px; padding: 5px; margin-left: 10px;">
+                    <option value="1 DÍA">1 DÍA</option>
+                    <option value="3 DÍAS">3 DÍAS</option>
+                    <option value="7 DÍAS">7 DÍAS</option>
+                    <option value="15 DÍAS">15 DÍAS</option>
+                    <option value="30 DÍAS">30 DÍAS</option>
+                </select>
+            </div>
+            <div>
+                <label for="plazoEntrega" style="font-weight: bold;">Plazo de Entrega:</label>
+                <select id="plazoEntrega" style="width: 150px; padding: 5px; margin-left: 10px;">
+                    <option value="A CONVENIR">A CONVENIR</option>
+                    <option value="INMEDIATA">INMEDIATA</option>
+                    <option value="1 SEMANA">1 SEMANA</option>
+                    <option value="2 SEMANAS">2 SEMANAS</option>
+                    <option value="1 MES">1 MES</option>
+                </select>
+            </div>
+            <div>
+                <label for="formaPago" style="font-weight: bold;">Forma de Pago:</label>
+                <select id="formaPago" style="width: 150px; padding: 5px; margin-left: 10px;">
+                    <option value="CONTADO">CONTADO</option>
+                    <option value="30 DÍAS">30 DÍAS</option>
+                    <option value="60 DÍAS">60 DÍAS</option>
+                    <option value="90 DÍAS">90 DÍAS</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <form class="info-fields">
+        <div>
+            <label for="nit">NIT de la Empresa:</label>
+            <input type="text" id="nit" name="nit" placeholder="Ej: 123456789-1">
+        </div>
+        <div>
+            <label for="requester">Nombre telefono Direccion del Solicitante:</label>
+            <input type="text" id="requester" name="requester" placeholder="Ej: Juan Pérez">
+        </div>
+    </form>
+
+    <div class="configuracion-precios">
+        <h3>⚙️ Ajuste Manual: activar % sobre precio de corte (COP/kg)</h3>
+        <div class="precio-input">
+            <label for="precioDisenoAlto">Diseño (&lt; 10 unid)</label>
+            <input type="number" step="100" min="0" id="precioDisenoAlto" placeholder="4600">
+        </div>
+        <div class="precio-input">
+            <label for="precioPlatinaAlto">Platina (&lt; 10 unid)</label>
+            <input type="number" step="100" min="0" id="precioPlatinaAlto" placeholder="2900">
+        </div>
+        <div class="precio-input">
+            <label for="precioDisenoBajo">Diseño (≥ 10 unid)</label>
+            <input type="number" step="100" min="0" id="precioDisenoBajo" placeholder="4100">
+        </div>
+        <div class="precio-input">
+            <label for="precioPlatinaBajo">Platina (≥ 10 unid)</label>
+            <input type="number" step="100" min="0" id="precioPlatinaBajo" placeholder="2600">
+        </div>
+        <div class="precio-input">
+            <label for="minDiseno">Costo Mín. Diseño (COP)</label>
+            <input type="number" step="100" min="0" id="minDiseno" placeholder="15000">
+        </div>
+        <div class="precio-input">
+            <label for="minPlatina">Costo Mín. Platina (COP)</label>
+            <input type="number" step="100" min="0" id="minPlatina" placeholder="6000">
+        </div>
+        <div class="precio-input">
+            <label for="aplicarAumento">Aplicar Aumento</label>
+            <input type="checkbox" id="aplicarAumento">
+        </div>
+        <div class="precio-input">
+            <label for="aplicarDescuento">Aplicar Descuento</label>
+            <input type="checkbox" id="aplicarDescuento">
+        </div>
+        <div class="precio-input">
+            <label for="porcentaje">Porcentaje (%)</label>
+            <input type="number" step="0.1" min="0" id="porcentaje" placeholder="0">
+        </div>
+        <div class="precio-input">
+            <button type="button" id="aplicarPorcentaje">Aplicar Porcentaje</button>
+        </div>
+    </div>
+    <p style="font-size: 0.9em; margin-top: 5px; margin-bottom: 20px; color: #757575;">
+        **Marca aumento o descuento, ingresa el porcentaje, aplica el cambio o desmarca para usar el precio original; VUELVA AL BOTON CALCULAR**
+    </p>
+
+    <div class="dxf-cost-calculator">
+        <h3>Calculadora de Costo de Corte DXF ⚡</h3>
+        <p>Esta herramienta analiza la longitud del corte y las dimensiones de tu archivo DXF. Soporta múltiples archivos.</p>
+        <form id="dxfForm">
+            <label for="dxfFileNew">1. Cargar archivo(s) DXF (puedes seleccionar varios):</label>
+            <input type="file" id="dxfFileNew" accept=".dxf" multiple>
+            <div style="margin-top: 10px;">
+                <label for="dxfMaterial">2. Seleccione Material (aplica a todos):</label>
+                <select id="dxfMaterial" required>
+                    <option value="">Seleccione un material</option>
+                </select>
+            </div>
+            <div style="margin-top: 10px;">
+                <label for="costoMinuto">3. Costo por minuto ($/min):</label>
+                <input type="number" step="0.01" min="0" id="costoMinuto" value="10000" required>
+            </div>
+            <button type="button" id="calculateDxfCost" style="background-color: #e67e22;">Calcular Costo Total</button>
+        </form>
+        <div id="dxfError" class="error"></div>
+        <div id="dxfResults" class="dxf-result-box" style="display:none;">
+            ✅ Resultados del Análisis y Cotización
+            <div id="dxfResultsTable"></div>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 30px; border-bottom: 1px solid #ccc; padding-bottom: 5px;">Cálculo de Costo de Material y Pliegue</h2>
+    <form id="formulario">
+	<table>
+		<thead>
+			<tr>
+				<th>Fila</th>
+				<th>Cantidad (Unid)</th>
+				<th>Ancho (mm)</th>
+				<th>Largo (mm)</th>
+				<th>Espesor (mm)</th>
+				<th>Nº Pliegues</th>
+				<th>Material</th>
+				<th>Mat cliente</th>
+				<th>Proceso</th>
+				<th>Precio kilo (COP)</th>
+				<th>Precio por Pliegue (COP)</th>
+				<th>Precio unitario corte (COP)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>1</td><td><input type="number" step="1" min="0" name="cantidad1" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho1"></td><td><input type="number" step="0.01" min="0" name="largo1"></td><td><input type="number" step="0.01" min="0" name="espesor1"></td><td><input type="number" step="1" min="0" name="pliegues1" value="0"></td><td><select name="material1"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto1"></td><td><select name="proceso1"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo1" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue1" class="precio-pliegue"></td><td><span id="precioCorte1">-</span></td></tr>
+			<tr><td>2</td><td><input type="number" step="1" min="0" name="cantidad2" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho2"></td><td><input type="number" step="0.01" min="0" name="largo2"></td><td><input type="number" step="0.01" min="0" name="espesor2"></td><td><input type="number" step="1" min="0" name="pliegues2" value="0"></td><td><select name="material2"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto2"></td><td><select name="proceso2"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo2" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue2" class="precio-pliegue"></td><td><span id="precioCorte2">-</span></td></tr>
+			<tr><td>3</td><td><input type="number" step="1" min="0" name="cantidad3" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho3"></td><td><input type="number" step="0.01" min="0" name="largo3"></td><td><input type="number" step="0.01" min="0" name="espesor3"></td><td><input type="number" step="1" min="0" name="pliegues3" value="0"></td><td><select name="material3"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto3"></td><td><select name="proceso3"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo3" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue3" class="precio-pliegue"></td><td><span id="precioCorte3">-</span></td></tr>
+			<tr><td>4</td><td><input type="number" step="1" min="0" name="cantidad4" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho4"></td><td><input type="number" step="0.01" min="0" name="largo4"></td><td><input type="number" step="0.01" min="0" name="espesor4"></td><td><input type="number" step="1" min="0" name="pliegues4" value="0"></td><td><select name="material4"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto4"></td><td><select name="proceso4"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo4" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue4" class="precio-pliegue"></td><td><span id="precioCorte4">-</span></td></tr>
+			<tr><td>5</td><td><input type="number" step="1" min="0" name="cantidad5" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho5"></td><td><input type="number" step="0.01" min="0" name="largo5"></td><td><input type="number" step="0.01" min="0" name="espesor5"></td><td><input type="number" step="1" min="0" name="pliegues5" value="0"></td><td><select name="material5"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto5"></td><td><select name="proceso5"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo5" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue5" class="precio-pliegue"></td><td><span id="precioCorte5">-</span></td></tr>
+			<tr><td>6</td><td><input type="number" step="1" min="0" name="cantidad6" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho6"></td><td><input type="number" step="0.01" min="0" name="largo6"></td><td><input type="number" step="0.01" min="0" name="espesor6"></td><td><input type="number" step="1" min="0" name="pliegues6" value="0"></td><td><select name="material6"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto6"></td><td><select name="proceso6"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo6" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue6" class="precio-pliegue"></td><td><span id="precioCorte6">-</span></td></tr>
+			<tr><td>7</td><td><input type="number" step="1" min="0" name="cantidad7" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho7"></td><td><input type="number" step="0.01" min="0" name="largo7"></td><td><input type="number" step="0.01" min="0" name="espesor7"></td><td><input type="number" step="1" min="0" name="pliegues7" value="0"></td><td><select name="material7"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto7"></td><td><select name="proceso7"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo7" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue7" class="precio-pliegue"></td><td><span id="precioCorte7">-</span></td></tr>
+			<tr><td>8</td><td><input type="number" step="1" min="0" name="cantidad8" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho8"></td><td><input type="number" step="0.01" min="0" name="largo8"></td><td><input type="number" step="0.01" min="0" name="espesor8"></td><td><input type="number" step="1" min="0" name="pliegues8" value="0"></td><td><select name="material8"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto8"></td><td><select name="proceso8"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo8" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue8" class="precio-pliegue"></td><td><span id="precioCorte8">-</span></td></tr>
+			<tr><td>9</td><td><input type="number" step="1" min="0" name="cantidad9" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho9"></td><td><input type="number" step="0.01" min="0" name="largo9"></td><td><input type="number" step="0.01" min="0" name="espesor9"></td><td><input type="number" step="1" min="0" name="pliegues9" value="0"></td><td><select name="material9"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto9"></td><td><select name="proceso9"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo9" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue9" class="precio-pliegue"></td><td><span id="precioCorte9">-</span></td></tr>
+			<tr><td>10</td><td><input type="number" step="1" min="0" name="cantidad10" value="0"></td><td><input type="number" step="0.01" min="0" name="ancho10"></td><td><input type="number" step="0.01" min="0" name="largo10"></td><td><input type="number" step="0.01" min="0" name="espesor10"></td><td><input type="number" step="1" min="0" name="pliegues10" value="0"></td><td><select name="material10"><option value="">Seleccione Material</option></select></td><td><input type="checkbox" name="materialProvisto10"></td><td><select name="proceso10"><option value="Ninguna">Ninguna</option><option value="Diseño">Diseño</option><option value="Platina">Platina</option></select></td><td><input type="number" step="0.01" min="0" name="precioKilo10" class="precio-kilo"></td><td><input type="number" step="0.01" min="0" name="precioPliegue10" class="precio-pliegue"></td><td><span id="precioCorte10">-</span></td></tr>
+		</tbody>
+	</table>
+            <label for="notas">OBSERVACIONES:</label>
+            <textarea id="notas" name="notas" rows="4" cols="100" placeholder="Escribe observaciones aquí"></textarea>
+        </div>
+
+        <button type="button" id="botonCalcular">Calcular Material y Pliegues</button>
+        <button type="button" id="botonLimpiar" class="boton-limpiar">Limpiar Todo</button>
+        <button type="button" id="pdfButton">Exportar a PDF</button>
+
+    </form>
+		<label for="imagenProducto">Anéxos (Opcional):</label>
+		<input type="file" id="imagenProducto" accept="image/*" multiple> 
+																 ```
+
+		***
+
+    <div id="error" class="error"></div>
+    <div id="resultados" class="resultados"></div>
