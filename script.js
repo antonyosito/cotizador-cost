@@ -36,7 +36,7 @@ const DEFAULT_COSTS = {
 
 // --- FUNCIONES DE REDONDEO OPTIMIZADAS ---
 function redondearCOP(valor) {
-    return Math.round(valor / 1000) * 1000;
+    return Math.round(valor / 50) * 50;
 }
 
 function redondearDecimales(valor, decimales = 2) {
@@ -1101,3 +1101,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
